@@ -1,0 +1,171 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    color:ghostwhite;
+    display: flex;
+    /* center horiz */
+    justify-content: center;
+    /* center vertically */
+    align-items: center;
+}
+
+.calendar{
+    width: 45rem;
+    height: 52rem;
+    background-color: rgb(60, 54, 54);
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, .9);
+}
+
+.month{
+    width: 100%;
+    height: 12rem;
+    background-color: maroon;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem .5rem rgba(0, 0, 0, .5);
+}
+
+.month i{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.month h1{
+    font-size: 3rem;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    letter-spacing: .00001rem;
+    margin-bottom: 1rem;
+}
+
+.month p{
+    font-size: 1.6rem;
+}
+
+.weekdays{
+    width: 100%;
+    height: 5rem;
+    padding: 0 .4rem;
+    /*makes weekdays horizntal on the page*/
+    display: flex;
+    align-items: center;
+}
+
+.weekdays div{
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .4rem;
+    /* (width of calendar minus padding for weekdays)/ 7 aka numOfDayInWeek */
+    width: calc(44.2rem/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .5);
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem;
+}
+
+.days div{
+    font-size: 1.4rem;
+    margin: .3rem;
+    /* 17:49 in video https://youtu.be/o1yMqPyYeAo */
+    width: calc(40.2rem/7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .5);
+    transition: background-color .2s;
+}
+
+.days div:hover:not(.today){
+    /* changes to these attributes if the date 
+    hovered over is not today*/
+    background-color: #262626;
+    border: .2rem solid #777;
+    cursor: pointer;
+}
+
+.prev-date,
+.next-date{
+    /* greys out dates in prev and next months */
+    opacity: .5;
+}
+
+.today{
+    background-color: maroon;
+}
+/* Popup container */
+.popup {
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
